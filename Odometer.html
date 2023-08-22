@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Odometer Display</title>
+    <style>
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgb(119, 118, 123);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mutateButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(153, 193, 241);
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .mutateButton:hover {
+            background-color:yellow;
+            
+            }
+        .modForm{
+			overflow-x: hidden;
+		}
+            
+    </style>
+</head>
+<body>
+    <h1>Welcome to Odometer</h1>
+    <div class="card">
+        <span class="reading" th:text="${reading}">12345</span>
+
+        <form class="modForm" action="" method="post">
+            <div class="button-container">
+                <button type="submit" class="mutateButton" name="action" value="prev">Decrement Reading</button>
+                <button type="submit" class="mutateButton" name="action" value="next">Increment Reading</button>
+                <button type="submit" class="mutateButton" name="action" value="reset">Reset Reading</button>
+            </div>
+            <input type="text" name="digits" class="inp">
+        </form>
+    </div>
+</body>
+</html>
